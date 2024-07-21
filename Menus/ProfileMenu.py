@@ -5,7 +5,7 @@ def SwitchProfile(jsonfile, mainprofile):
     switched = False
     if len(jsonfile) < 2:
         print("You have no other profiles to switch to.")
-        return False
+        return mainprofile
     else:
         while not switched:
             print(" --- Profiles --- ")
@@ -16,7 +16,7 @@ def SwitchProfile(jsonfile, mainprofile):
             inputProfile = input("Enter the name of the profile: ")
             
             for profile in jsonfile:
-                if profile["username"] == inputProfile and inputProfile != mainprofile["username"]:
+                if profile["username"] == inputProfile and mainprofile["username"] != inputProfile:
                     mainprofile["inuse"] = False
                     profile["inuse"] = True
                     mainprofile = profile
@@ -25,8 +25,8 @@ def SwitchProfile(jsonfile, mainprofile):
                     break
             else:
                 print("Profile not found.")
-            json.dump(jsonfile, open("profiles.json", "w"), indent=4)
-            return True
+            json.dump(jsonfile, open("profiles.json", "w"), indent=4)    
+        return mainprofile
 
 def DeleteProfile():
     pass

@@ -56,11 +56,13 @@ def CreateProfile(jsonfile, newprofile = True):
 
     profile["inuse"] = newprofile
 
+    if newprofile == True:
+        mainProfile = profile
+
     ClearLines(5 + tempLines)
 
     jsonfile.append(profile)
     json.dump(jsonfile, open("profiles.json", "w"), indent=4)
-    mainProfile = profile
 
 tempLines = 0
 def ClearLines(n):
@@ -94,7 +96,7 @@ def PrintHelp():
     
 profileClearCount = 7
 def PrintProfile():
-    global tempLines
+    global tempLines, mainProfile
     print(" --- Profile Manager ---" + "\n" +
           " -[k]- New (Add new profile)" + "\n" +
           " -[k]- Delete (Delete profile)" + "\n" + 
@@ -109,7 +111,7 @@ def PrintProfile():
             ProfileMenu.DeleteProfile(profiles)
         elif command == "switch":
             ClearLines(profileClearCount + tempLines)
-            ProfileMenu.SwitchProfile(profiles, mainProfile)
+            mainProfile = ProfileMenu.SwitchProfile(profiles, mainProfile)
         elif command == "back":
             ClearLines(profileClearCount + tempLines)
             PrintMainMenu()

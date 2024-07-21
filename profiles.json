@@ -1,2 +1,14 @@
 [
+    {
+        "username": "Pliis",
+        "modifier": "+0",
+        "multiplier": "2",
+        "inuse": true
+    },
+    {
+        "username": "2",
+        "modifier": "+2",
+        "multiplier": "2",
+        "inuse": false
+    }
 ]
