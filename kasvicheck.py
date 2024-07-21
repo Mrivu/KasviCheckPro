@@ -1,6 +1,9 @@
 import json
 import os
 
+# Import Menus
+import Menus.ProfileMenu as ProfileMenu
+
 def GetVersion():
     updatesfile = open("updates.txt", "r")
 
@@ -9,17 +12,55 @@ def GetVersion():
             return text.replace("Version: ", "")
     updatesfile.close() 
 
-def CreateProfile(jsonfile):
+mainProfile = None
+def CreateProfile(jsonfile, newprofile = True):
+
+    global mainProfile
+    global tempLines
+
     print("Creating a new profile...")
 
     profile = {}
-    profile["name"] = input("Enter profile name: ")
-    profile["modifier"] = input("Enter your profile modifier (Survival modifier): ")
-    profile["multiplier"] = input("Enter your profile multiplier (Natural explorer ect.): ")
-    profile["inuse"] = True
+
+    while True:
+        profile["username"] = input("Enter your username: ")
+        if not profile["username"]:
+            print("Invalid username, please input a valid username.")
+            tempLines += 2
+        else:
+            break
+
+    while True:
+        modifiervalue = input("Enter your profile modifier (Survival modifier): ")
+        if (len(modifiervalue) < 2 ):
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier), lenerror")
+            tempLines += 2
+        elif modifiervalue[0] != "+" and modifiervalue[0] != "-":
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier), moderror")
+            tempLines += 2
+        elif not modifiervalue[1:].isdigit():
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier), numerror")
+            tempLines += 2
+        else:
+            profile["modifier"] = modifiervalue
+            break
+    
+    while True:
+        multipliervalue = input("Enter your profile multiplier (Natural explorer ect.): ")
+        if not (multipliervalue.isdigit()):
+            print("Invalid multiplier, please enter a number. (1,2,3 etc)")
+            tempLines += 2
+        else:
+            profile["multiplier"] = multipliervalue
+            break
+
+    profile["inuse"] = newprofile
+
+    ClearLines(5 + tempLines)
 
     jsonfile.append(profile)
     json.dump(jsonfile, open("profiles.json", "w"), indent=4)
+    mainProfile = profile
 
 tempLines = 0
 def ClearLines(n):
@@ -42,12 +83,40 @@ def PrintMainMenu():
           " -[K]- Exit" + "\n")
 
 helpClearCount = 6
-helpExit = "any"    
 def PrintHelp():
     print(" --- Help ---" + "\n" +
           " KEYWORDS: Type word marked with [K] to perform actions. Some keywords can be combined." + "\n" +
           " INPUTTING: Type keywords to perform actions. Capitalization can be ignored." + "\n" + 
           " - Input anything to continue - " + "\n")
+    input("Enter command: ").lower()
+    ClearLines(helpClearCount)
+    PrintMainMenu()
+    
+profileClearCount = 7
+def PrintProfile():
+    global tempLines
+    print(" --- Profile Manager ---" + "\n" +
+          " -[k]- New (Add new profile)" + "\n" +
+          " -[k]- Delete (Delete profile)" + "\n" + 
+          " -[k]- Switch (Switch)" + "\n" +
+          " -[k]- Back (Back to main menu)" + "\n")
+    while True:
+        command = input("Enter command: ").lower()
+        if command == "new":
+            CreateProfile(profiles, False)
+        elif command == "delete":
+            ClearLines(profileClearCount + tempLines)
+            ProfileMenu.DeleteProfile(profiles)
+        elif command == "switch":
+            ClearLines(profileClearCount + tempLines)
+            ProfileMenu.SwitchProfile(profiles, mainProfile)
+        elif command == "back":
+            ClearLines(profileClearCount + tempLines)
+            PrintMainMenu()
+            break
+        else:
+            tempLines += 2
+            print("Invalid command.")
 
 # Main
 ## Variables
@@ -66,9 +135,9 @@ else:
     for profile in profiles:
         if profile["inuse"]:
             mainProfile = profile
-            print("Logging in as " + profile["name"] + "...")
+            print("Logging in as " + profile["username"] + "...")
             break
-print("Logged in as " + mainProfile["name"] + "!")
+print("Logged in as " + mainProfile["username"] + "!")
 print("Type/combine keywords[k] to perform actions. Type 'Help' for more information." + "\n")
 PrintMainMenu()
 
@@ -77,11 +146,9 @@ while True:
     if command == "help":
         ClearLines(mainmenuClearCount + tempLines)
         PrintHelp()
-        input("Enter command: ").lower()
-        ClearLines(helpClearCount)
-        PrintMainMenu()
     elif command == "profiles":
-        print("Profiles menu")
+        ClearLines(mainmenuClearCount + tempLines)
+        PrintProfile()
     elif command == "check":
         print("Check menu")
     elif command == "import plants":
