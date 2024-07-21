@@ -95,23 +95,26 @@ def PrintHelp():
     PrintMainMenu()
     
 profileClearCount = 7
+
 def PrintProfile():
     global tempLines, mainProfile
-    print(" --- Profile Manager ---" + "\n" +
-          " -[k]- New (Add new profile)" + "\n" +
-          " -[k]- Delete (Delete profile)" + "\n" + 
-          " -[k]- Switch (Switch)" + "\n" +
-          " -[k]- Back (Back to main menu)" + "\n")
+    ProfileMenu.MenuText()
     while True:
         command = input("Enter command: ").lower()
         if command == "new":
             CreateProfile(profiles, False)
         elif command == "delete":
-            ClearLines(profileClearCount + tempLines)
-            ProfileMenu.DeleteProfile(profiles)
+            result = ProfileMenu.DeleteProfile(profiles, mainProfile)
+            if result:
+                ProfileMenu.MenuText()
+            else:
+                tempLines += 2
         elif command == "switch":
-            ClearLines(profileClearCount + tempLines)
-            mainProfile = ProfileMenu.SwitchProfile(profiles, mainProfile)
+            result, mainProfile = ProfileMenu.SwitchProfile(profiles, mainProfile)
+            if result:
+                ProfileMenu.MenuText()
+            else:
+                tempLines += 2
         elif command == "back":
             ClearLines(profileClearCount + tempLines)
             PrintMainMenu()
