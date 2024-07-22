@@ -1,4 +1,7 @@
 import random
+import math
+
+import Menus.resultTable as resultTable
 
 def PrintCheck(mainprofile):
     print(" --- Check for plants ---" + "\n" +
@@ -35,5 +38,30 @@ def PrintCheck(mainprofile):
 
     # Plant discovery logic
     ## The higher the roll, the larger the chance of discovering rare plants.
+    rollResults = {
+    entry["Roll"]: {
+        "Common": entry["Common"],
+        "Uncommon": entry["Uncommon"],
+        "Rare": entry["Rare"],
+        "Very rare": entry["Very rare"],
+        "Legendary": entry["Legendary"]
+    } for entry in resultTable.rollresults
+    }
 
-   
+    plantAmount = math.floor(result / 10)
+    ## Check nat 20
+    if (result -  totalModifier) == 20:
+        plantAmount += 1
+    plantAmount = plantAmount * int(mainprofile["multiplier"])
+
+    if (rollResults[result]["Common"] > 0):
+        rarityResults = random.choices(["Common","Uncommon","Rare","Very rare","Legendary"],weights=(rollResults[result]["Common"], rollResults[result]["Uncommon"], rollResults[result]["Rare"], rollResults[result]["Very rare"], rollResults[result]["Legendary"]), k=plantAmount)  
+        for r in rarityResults:
+            print(" - " + r + " plant discovered!")
+        input(" - Enter anything to continue:  ")
+        return            
+    else:
+        print(" - You didn't find any plants." + "\n")
+        print(" - Input anything to continue - ")
+        input(" - Enter command:  ")
+        return
