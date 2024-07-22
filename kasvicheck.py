@@ -3,6 +3,7 @@ import os
 
 # Import Menus
 import Menus.ProfileMenu as ProfileMenu
+import Menus.CheckMenu as CheckMenu
 
 def GetVersion():
     updatesfile = open("updates.txt", "r")
@@ -33,13 +34,13 @@ def CreateProfile(jsonfile, newprofile = True):
     while True:
         modifiervalue = input("Enter your profile modifier (Survival modifier): ")
         if (len(modifiervalue) < 2 ):
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier), lenerror")
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
             tempLines += 2
         elif modifiervalue[0] != "+" and modifiervalue[0] != "-":
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier), moderror")
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
             tempLines += 2
         elif not modifiervalue[1:].isdigit():
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier), numerror")
+            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
             tempLines += 2
         else:
             profile["modifier"] = modifiervalue
@@ -74,28 +75,27 @@ def ClearLines(n):
 def ClearTerminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-mainmenuClearCount = 9
+mainmenuClearCount = 8
 def PrintMainMenu():
     print(" --- Kasvichecker Pro ---" + "\n" +
           " -[K]- Help" + "\n" + 
           " -[K]- Profiles" + "\n" +
           " -[K]- Check" + "\n" +
           " -[K]- Import plants" + "\n" +
-          " -[K]- Edit plants" + "\n" +
           " -[K]- Exit" + "\n")
 
-helpClearCount = 6
+helpClearCount = 7
 def PrintHelp():
     print(" --- Help ---" + "\n" +
           " KEYWORDS: Type word marked with [K] to perform actions. Some keywords can be combined." + "\n" +
           " INPUTTING: Type keywords to perform actions. Capitalization can be ignored." + "\n" + 
+          " QUICK EXIT: Ctrl + C closes the program at any time." + "\n" +
           " - Input anything to continue - " + "\n")
     input("Enter command: ").lower()
     ClearLines(helpClearCount)
     PrintMainMenu()
     
 profileClearCount = 7
-
 def PrintProfile():
     global tempLines, mainProfile
     ProfileMenu.MenuText()
@@ -122,6 +122,59 @@ def PrintProfile():
         else:
             tempLines += 2
             print("Invalid command.")
+
+def PrintImportPlants():
+
+    tempLines = 0 # not global
+
+    print(" --- Import Plants ---" + "\n" +
+          " - Place plant JSON file under 'ImportFolder'" + "\n")
+    importFolderContents = os.listdir("ImportFolder")
+    if importFolderContents:
+        print(" --- Files found in 'ImportFolder': ---")
+        for file in importFolderContents:
+            print(" - " + file)
+        print("\n" + " - Input 'IMPORT' to continue - ")
+        if (input("Enter command: ") == "IMPORT"): 
+            print("\n" + "Importing plants...")
+            allplants = json.loads(open("allplants.json", "r").read())
+
+            for file in importFolderContents:
+                plants = json.loads(open("ImportFolder/" + file, "r").read())
+                for plant in plants:
+                    if any(p["name"] == plant["name"] for p in allplants):
+                        print(f"Plant {plant['name']} already exists in the database, type 'w' to overwrite.")
+                        if input("Enter command: ") == "w":
+                            # Remove the existing plant with the same name
+                            allplants = [p for p in allplants if p["name"] != plant["name"]]
+                            allplants.append(plant)
+                            print(f"Plant {plant['name']} was overwritten.")
+                            tempLines += 3
+                        else:
+                            print(f"Plant {plant['name']} was not imported.")
+                            tempLines += 3
+                    else:
+                        allplants.append(plant)
+                        print(f"Plant {plant['name']} was imported.")
+                        tempLines += 1
+            allplants = sorted(allplants, key=lambda x: x['name'])
+
+            json.dump(allplants, open("allplants.json", "w"), indent=1)
+
+            print("\n" + "Plants imported successfully!" + "\n" + " - Input anything to continue - ")
+            input("Enter command: ")
+            ClearLines(14 + tempLines)
+            PrintMainMenu()
+        else:
+            ClearLines(7 + len(importFolderContents))
+            PrintMainMenu()
+    else:
+        print("No files found in 'ImportFolder'. Nothing to import." + "\n" + "\n"
+              " - Input anything to continue - ")
+        input("Enter command: ")
+        ClearLines(7)
+        PrintMainMenu()
+
 
 # Main
 ## Variables
@@ -155,11 +208,11 @@ while True:
         ClearLines(mainmenuClearCount + tempLines)
         PrintProfile()
     elif command == "check":
-        print("Check menu")
+        ClearLines(mainmenuClearCount + tempLines)
+        CheckMenu.PrintCheck(mainProfile)
     elif command == "import plants":
-        print("Import plants menu")
-    elif command == "edit plants":
-        print("Edit plants menu")
+        ClearLines(mainmenuClearCount + tempLines)
+        PrintImportPlants()
     elif command == "exit":
         print("Exiting...")
         break
