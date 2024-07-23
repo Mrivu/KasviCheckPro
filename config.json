@@ -1,5 +1,6 @@
 {
     "downloadCheckResults": true,
     "defaultArea": "None",
-    "defaultRegion": "None"
+    "defaultRegion": "None",
+    "selfRoll": false
 }

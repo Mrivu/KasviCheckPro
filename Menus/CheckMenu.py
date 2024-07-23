@@ -75,10 +75,17 @@ def PrintCheck(mainprofile):
 
     totalModifier = mainprofilemodifier + modifiervalue
     sign = "+" if totalModifier > 0 else ""
+    
     print("\n" + " -- Total modifier: " + sign + str(totalModifier) + " --" + "\n")
-    input(" - Roll the dice > ENTER < ")     
-    result = random.randint(1, 20) + totalModifier
-    print(" - You rolled a " + str(result) + "!" + "\n") 
+
+    ## Handle dice roll
+    if (config["selfRoll"]):
+        result = int(input(" - What did you roll (Base die)? > ")) + totalModifier
+        print(" - You rolled a " + str(result) + "!" + "\n") 
+    else:
+        input(" - Roll the dice > ENTER < ")     
+        result = random.randint(1, 20) + totalModifier
+        print(" - You rolled a " + str(result) + "!" + "\n") 
 
     # Plant discovery logic
     ## The higher the roll, the larger the chance of discovering rare plants.
