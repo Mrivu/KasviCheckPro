@@ -186,7 +186,7 @@ if not os.path.exists("ImportFolder"):
 ClearTerminal()
 print(" WELCOME TO KASVICHEKER PRO - VERSION: " + GetVersion())
 print(" - Created by Iivari van Uden - ")
-print(" Check out the github page for the latest releases: link" + "\n")
+print(" Check out the github page for the latest releases: https://github.com/Mrivu/KasviCheckPro" + "\n")
 
 profiles = json.loads(open("profiles.json", "r").read())
 if not profiles:
