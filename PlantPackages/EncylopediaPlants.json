@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Borithen",
+        "rarity": "Common",
+        "Area": ["Arctic","Coast","Desert","Plains","Mountain","Forest"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "A bush containing small black berries. Often used as a simple enhancer."
+    },
+    {
+        "name": "Gravelily",
+        "rarity": "Uncommon",
+        "Area": ["Plains","Swamp","Forest"],
+        "Region": ["Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication", "Vitality"],
+        "Description": "A small lily as black as night, but decorated by a white star. Found among gravesites and battlefields."
+    },
+    {
+        "name": "Arathon",
+        "rarity": "Uncommon",
+        "Area": ["Arctic","Forest"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra"],
+        "Effects": ["Unique"],
+        "Description": "A small plant, resembling a yellow bush. It glimmers slightly and therefore is also known as the crownbush."
+    },
+    {
+        "name": "Eowiner",
+        "rarity": "Common",
+        "Area": ["Arctic"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Resistance","Cold"],
+        "Description": "A large gray flower. The first sign of winter."
+    },
+    {
+        "name": "Luthenen",
+        "rarity": "Legendary",
+        "Area": ["Arctic","Coast","Plains","Forest","Swamp","Jungle"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Arcana","Resistance","Unique"],
+        "Description": "This flower is visible to only those who the flower deems beautiful. Apparently it is grown from the seed of the fallen greattree."
+    },
+    {
+        "name": "Mrtas",
+        "rarity": "Legendary",
+        "Area": ["Plains","Mountain","Swamp","Forest","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Worngar"],
+        "Effects": ["Poison","Unique"],
+        "Description": "A dangeours plant knon for it's mind control abilities. One infected by the plant is hard to detect."
+    },
+    {
+        "name": "Earendiler",
+        "rarity": "Very Rare",
+        "Area": ["Coast","Swamp","Jungle"],
+        "Region": ["Ekobis", "Amalra", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Unique"],
+        "Description": "A rose that grows underwater. It's shaft is extremely durable and shines like a diamond. "
+    },
+    {
+        "name": "Nehi",
+        "rarity": "Uncommon",
+        "Area": ["Arctic","Desert","Mountain","Swamp","Jungle","Cave"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria", "Ylaidya"],
+        "Effects": ["Enhance"],
+        "Description": "A small, sharp fern. Used in prominetly in Amalran cusine."
+    },
+    {
+        "name": "Ecthen",
+        "rarity": "Rare",
+        "Area": ["Coast","Desert","Plains"],
+        "Region": ["Jyrnimm", "Amalra", "Arcalus", "Ellaria"],
+        "Effects": ["Vitality"],
+        "Description": "A berry bush that grows where it's warm."
+    },
+    {
+        "name": "Arewinia",
+        "rarity": ["Rare"],
+        "Area": ["Swamp","Jungle"],
+        "Region": ["Ekobis", "Ylaidya"],
+        "Effects": ["Medication","Stamina"],
+        "Description": "A bright, multicolored flower known for it's sweet nectar."
+    },
+    {
+        "name": "Eken leaf bundle",
+        "rarity": "Uncommon",
+        "Area": ["Forest"],
+        "Region": ["Ekobis"],
+        "Effects": ["Strength", "Consitution"],
+        "Description": "A leaf sold across Evervast. The leaves smell good and are used in saunas."
+    },
+    {
+        "name": "Firgolfir",
+        "rarity": "Rare",
+        "Area": ["Arctic","Desert","Mountain","Cave"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Charisma"],
+        "Description": "A small flower, white like the stars. Boost's one's confidence and charisma. Often used by powerful leaders. Often classified as a drug."
+    },
+    {
+        "name": "Flamevine",
+        "rarity": "Rare",
+        "Area": ["Cave","Depths","Forest","Jungle"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Fire", "Resistance"],
+        "Description": "This vine is populated by small blossoming light blue flowers. A large contributor to forest fires."
+    },
+    {
+        "name": "Turam",
+        "rarity": "Uncommon",
+        "Area": ["Coast","Plains","Forest","Mountain"],
+        "Region": ["Worngar"],
+        "Effects": ["Poison"],
+        "Description": "A gray rose that grows almost exclusively in Heltzenhold."
+    }
+]

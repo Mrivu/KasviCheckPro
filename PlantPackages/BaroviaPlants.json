@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Greenmint",
+        "rarity": "Uncommon",
+        "Area": ["Cave", "Forest", "Swamp", "Jungle"],
+        "Region": ["Ekobis", "Worngar", "Arcalus", "Ylaidya"],
+        "Effects": ["Unique"],
+        "Description": "A small, light green plant. It’s purpose is unclear."
+    },
+    {
+        "name": "Cliff ginger",
+        "rarity": "Rare",
+        "Area": ["Mountain"],
+        "Region": ["Jyrnimm","Amalra","Worngar", "Ekobis", "Ellaria"],
+        "Effects": ["Stamina", "Constitution", "Resistance"],
+        "Description": "A long green plant, harvested for it's thick, yellow roots. It grows in high places. It is said to hold benefits for endurance and stamina."
+    },
+    {
+        "name": "Serpent-tail",
+        "rarity": "Uncommon",
+        "Area": ["Forest", "Jungle", "Swamp", "Plains", "Coast"],
+        "Region": ["Jyrnimm","Amalra","Worngar", "Ekobis", "Ellaria"],
+        "Effects": ["Unique", "Poison"],
+        "Description": "A dark green herb that grows near ditches. The plant has sharp edges which can wound you if you aren't careful."
+    },
+    {
+        "name": "Embercap",
+        "rarity": "Very Rare",
+        "Area": ["Mountain"],
+        "Region": ["Jyrnimm","Amalra","Worngar", "Ekobis", "Ellaria"],
+        "Effects": ["Fire", "Resistance"],
+        "Description": "An orange mushroom that grows deep in caves. It's tranclucent cap glows in the dark."
+    }
+]

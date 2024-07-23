@@ -1,0 +1,9 @@
+
+{
+    "name": "Example",
+    "rarity": ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"],
+    "Area": ["Arctic","Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle","Cave","Depths"],
+    "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+    "Effects": ["Vitality","Medication","Stamina","Poison","Speed","Ability score","Enhance","Element","Resistance","Dillute","Unique","Arcana"],
+    "Description": "A common leaf that is gray in color. It is often used among druids and as a simple enhancer."
+}

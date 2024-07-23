@@ -209,7 +209,8 @@ while True:
         PrintProfile()
     elif command == "check":
         ClearLines(mainmenuClearCount + tempLines)
-        CheckMenu.PrintCheck(mainProfile)
+        ClearLines(CheckMenu.PrintCheck(mainProfile))
+        PrintMainMenu()
     elif command == "import plants":
         ClearLines(mainmenuClearCount + tempLines)
         PrintImportPlants()

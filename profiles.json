@@ -1,14 +1,2 @@
 [
-    {
-        "username": "Iivari",
-        "modifier": "+2",
-        "multiplier": "2",
-        "inuse": false
-    },
-    {
-        "username": "K",
-        "modifier": "+2",
-        "multiplier": "2",
-        "inuse": true
-    }
 ]

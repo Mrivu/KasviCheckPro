@@ -1,0 +1,259 @@
+[
+    {
+        "name": "Grayleaf",
+        "rarity": "Common",
+        "Area": ["Plains", "Forest"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance", "Medication"],
+        "Description": "A common leaf that is gray in color. It is often used among druids and as a simple enhancer."
+    },
+    {
+        "name": "Blazeroot",
+        "rarity": "Rare",
+        "Area": ["Cave", "Swamp"],
+        "Region": ["Worngar", "Arcalus", "Ylaidya"],
+        "Effects": ["Fire", "Strength"],
+        "Description": "A rare root that is gray on the outside, with orange veins inside. Used as a foolproof firestarter, since it creates fire when crushed."
+    },
+    {
+        "name": "Murkmoss",
+        "rarity": "Uncommon",
+        "Area": ["Coast","Forest","Swamp","Jungle","Cave"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "A moss that grow in puddles of water. It has a brown tint."
+    },
+    {
+        "name": "Longhay",
+        "rarity": "Common",
+        "Area": ["Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "Longhay can grow up to 70cm and resembles standard wheat. It has however, no ear(tip)."
+    },
+    {
+        "name": "Knaveroot",
+        "rarity": "Rare",
+        "Area": ["Arctic","Coast","Plains","Forest","Swamp","Jungle","Cave","Depths"],
+        "Region": ["Ekobis", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "Knaveroot is deceptively similar to a standard root of a tree. It's true colors are only revealed when it is cut open, sheltering a black sap-like liquid."
+    },
+    {
+        "name": "Crownmoss",
+        "rarity": "Very Rare",
+        "Area": ["Forest","Mountain","Swamp","Jungle","Cave","Depths"],
+        "Region": ["Ekobis", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "A dark green moss wiht blossoming golden flowers. It grows in dark, humid places and is often found amongst old ruins."
+    },
+    {
+        "name": "Dragonflower",
+        "rarity": "Legendary",
+        "Area": ["Coast","Desert","Plains"],
+        "Region": ["Jyrnimm", "Amalra", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "This flower is rumoured to be left behind whenever a dragon bleeds. It's petals are red and it's stem is a orange gradient."
+    },
+    {
+        "name": "Moonbloom",
+        "rarity": "Very Rare",
+        "Area": ["Arctic","Desert","Plains","Mountain","Swamp"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Intelligence","Arcana"],
+        "Description": "This light blue flower grows only during the night and quickly withers when exposed to sunlight."
+    },
+    {
+        "name": "Waterlily",
+        "rarity": "Common",
+        "Area": ["Coast","Desert","Plains","Forest","Swamp","Jungle","Cave"],
+        "Region": ["Ekobis", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Dillute"],
+        "Description": "This flower grows in small ponds or lakes. It's petals are white and it's stem is green."
+    },
+    {
+        "name": "Honeyfungus",
+        "rarity": "Uncommon",
+        "Area": ["Plains","Forest","Swamp","Jungle","Cave"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus"],
+        "Effects": ["Dillute"],
+        "Description": "The honeyfungus is a yellow mushroom that grows in clusters. A small natural webbing covers the cap."
+    },
+    {
+        "name": "Achar ash",
+        "rarity": "Rare",
+        "Area": ["Plains","Forest","Mountain","Swamp","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
+        "Effects": ["Dillute"],
+        "Description": "The Achar is a small fern that turns into ash at the end of it's lifecycle. The fern itself has a red tint to it."
+    },
+    {
+        "name": "Coppergrass",
+        "rarity": "Very Rare",
+        "Area": ["Plains","Mountain","Jungle","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Dillute"],
+        "Description": "Coppergrass grows on rusted metals, mainly oxidized copper. The grass itself is short and dark green."
+    },
+    {
+        "name": "Aylia bloom",
+        "rarity": "Legendary",
+        "Area": ["Arctic","Forest","Mountain","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Arcalus"],
+        "Effects": ["Dillute"],
+        "Description": "The Aylia bloom is a large, white flower that grows in the dark. It's petals are luminescent and it's stem is black as night. These flowers are rumoured to onyl grow during eclipses."
+    },
+    {
+        "name": "Ironshroom",
+        "rarity": "Rare",
+        "Area": ["Arctic","Plains","Forest","Mountain","Swamp","Jungle","Cave"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Vitality","Endurance"],
+        "Description": "This mushroom's cap is as hard as iron. It grows near trees or rocks and is sometimes used as armor by small creatures."
+    },
+    {
+        "name": "Warrior's weed",
+        "rarity": "Very Rare",
+        "Area": ["Arctic","Coast","Forest","Mountain","Swamp","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
+        "Effects": ["Stamina","Speed","Dexterity","Strength"],
+        "Description": "This weed grows in patches and is often in high demand during wars."
+    },
+    {
+        "name": "Blackrose",
+        "rarity": "Rare",
+        "Area": ["Desert","Forest","Swamp","Jungle","Cave","Depths"],
+        "Region": ["Ekobis", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication","Poison","Poison","Arcana"],
+        "Description": "This rose is known for it's danger if not handled properly. It's thorns are especially sharp and emit a potent poison. It's petals are black and it's stem is a dark purple."
+    },
+    {
+        "name": "Frostbloom",
+        "rarity": "Uncommon",
+        "Area": ["Arctic"],
+        "Region": ["Jyrnimm", "Amalra", "Worngar", "Arcalus"],
+        "Effects": ["Frost","Frost"],
+        "Description": "A whiter flowe with a blue gradient. It's petals are cold to the touch."
+    },
+    {
+        "name": "Rimeshroom",
+        "rarity": "Rare",
+        "Area": ["Arctic"],
+        "Region": ["Jyrnimm", "Amalra", "Worngar", "Arcalus"],
+        "Effects": ["Frost","Resistance"],
+        "Description": "A deep blue mushroom that grows near rivers."
+    },
+    {
+        "name": "Thundergrass",
+        "rarity": "Very Rare",
+        "Area": ["Plains", "Mountain"],
+        "Region": ["Jyrnimm", "Amalra", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Lightning", "Speed"],
+        "Description": "A tall, blue grass that has a shimmering glow. It's said that this grass grows where lighting strikes."
+    },
+    {
+        "name": "Nightshade",
+        "rarity": "Rare",
+        "Area": ["Forest", "Swamp", "Jungle", "Cave"],
+        "Region": ["Ekobis", "Worngar", "Ylaidya", "Arcalus", "Ellaria", "Jyrnimm", "Amalra"],
+        "Effects": ["Poison", "Arcana"],
+        "Description": "A dark purple plant that blooms in the dark. Small, white beads grow on the plant, which are toxic and emit a white light."
+    },
+    {
+        "name": "Sunbloom",
+        "rarity": "Uncommon",
+        "Area": ["Desert","Plains","Mountain"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication"],
+        "Description": "This small flower always faces the sun. It's petals are yellow and it's stem is a light green."
+    },
+    {
+        "name": "Spellshroom",
+        "rarity": "Uncommon",
+        "Area": ["Arctic","Plains","Swamp","Jungle","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Arcalus"],
+        "Effects": ["Resistance","Arcana"],
+        "Description": "A large mushroom containing a dark, sticky liquid."
+    },
+    {
+        "name": "Starmoss",
+        "rarity": "Very Rare",
+        "Area": ["Coast","Desert","Plains","Mountain","Swamp","Cave","Depths"],
+        "Region": ["Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
+        "Effects": ["Arcana","Arcana"],
+        "Description": "This moss is a black color with small, glowing white dots, resembling the night sky."
+    },
+    {
+        "name": "Thornroot",
+        "rarity": "Rare",
+        "Area": ["Swamp", "Jungle"],
+        "Region": ["Worngar", "Ylaidya"],
+        "Effects": ["Poison", "Constitution"],
+        "Description": "A root covered in sharp thorns. It grows among tall trees."
+    },
+    {
+        "name": "Gahjaras",
+        "rarity": "Very Rare",
+        "Area": ["Coast","Desert","Plains","Jungle"],
+        "Region": ["Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Vitality","Stamina","Stamina"],
+        "Description": "A common leaf that is gray in color. It is often used among druids and as a simple enhancer."
+    },
+    {
+        "name": "Lightberry",
+        "rarity": "Rare",
+        "Area": ["Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Unique","Arcana"],
+        "Description": "This berry grows on a small, unintresting bush. It's light often attracts small insects."
+    },
+    {
+        "name": "Strangeroot",
+        "rarity": "Uncommon",
+        "Area": ["Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Wisdom", "Poison", "Psychic"],
+        "Description": "This root is a dark purple color and has a strange, sweet smell."
+    },
+    {
+        "name": "Deepmoss",
+        "rarity": "Common",
+        "Area": ["Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication"],
+        "Description": "Moss that grows near crevices and cracks. It's a dark green color."
+    },
+    {
+        "name": "Shadowstalk",
+        "rarity": "Very Rare",
+        "Area": ["Cave", "Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Unique", "Dexterity"],
+        "Description": "A transparent shadowy plant. It's leaves are purple."
+    },
+    {
+        "name": "Deepcap",
+        "rarity": "Rare",
+        "Area": ["Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Poison","Wisdom"],
+        "Description": "This shroom usually grows on walls. Poisonous centipides love to reside under the cap."
+    },
+    {
+        "name": "Trollbark sap",
+        "rarity": "Rare",
+        "Area": ["Arctic","Forest","Swamp"],
+        "Region": ["Jyrnimm", "Ekobis", "Worngar", "Arcalus", "Ellaria"],
+        "Effects": ["Unique","Constitution"],
+        "Description": "Trollbark is a hefty tree, growing up to a meter in diameter. It also has a strange property that causes the tree to regenerate extremely fast."
+    },
+    {
+        "name": "Roadrose",
+        "rarity": "Common",
+        "Area": ["Coast","Plains","Forest","Mountain"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Poison","Poison","Speed"],
+        "Description": "Found near roads. This rose's petals have a brown tint to it."
+    }
+
+]
