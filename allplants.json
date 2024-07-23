@@ -19,7 +19,7 @@
    "Ellaria"
   ],
   "Effects": [
-   "Dillute"
+   "Dilute"
   ],
   "Description": "The Achar is a small fern that turns into ash at the end of it's lifecycle. The fern itself has a red tint to it."
  },
@@ -76,7 +76,7 @@
    "Arcalus"
   ],
   "Effects": [
-   "Dillute"
+   "Dilute"
   ],
   "Description": "The Aylia bloom is a large, white flower that grows in the dark. It's petals are luminescent and it's stem is black as night. These flowers are rumoured to onyl grow during eclipses."
  },
@@ -125,7 +125,7 @@
  },
  {
   "name": "Borithen",
-  "rarity": "Common",
+  "rarity": "Uncommon",
   "Area": [
    "Arctic",
    "Coast",
@@ -146,6 +146,28 @@
    "Enhance"
   ],
   "Description": "A bush containing small black berries. Often used as a simple enhancer."
+ },
+ {
+  "name": "Cavefern",
+  "rarity": "Common",
+  "Area": [
+   "Mountain",
+   "Cave",
+   "Depths"
+  ],
+  "Region": [
+   "Jyrnimm",
+   "Ekobis",
+   "Amalra",
+   "Worngar",
+   "Arcalus",
+   "Ylaidya",
+   "Ellaria"
+  ],
+  "Effects": [
+   "Unique(Preservation)"
+  ],
+  "Description": "A small green fern that grows in dark crevices."
  },
  {
   "name": "Cliff ginger",
@@ -187,7 +209,7 @@
    "Ellaria"
   ],
   "Effects": [
-   "Dillute"
+   "Dilute"
   ],
   "Description": "Coppergrass grows on rusted metals, mainly oxidized copper. The grass itself is short and dark green."
  },
@@ -238,6 +260,7 @@
   "name": "Deepmoss",
   "rarity": "Common",
   "Area": [
+   "Cave",
    "Depths"
   ],
   "Region": [
@@ -273,6 +296,26 @@
    "Enhance"
   ],
   "Description": "This flower is rumoured to be left behind whenever a dragon bleeds. It's petals are red and it's stem is a orange gradient."
+ },
+ {
+  "name": "Earendiler",
+  "rarity": "Very Rare",
+  "Area": [
+   "Coast",
+   "Swamp",
+   "Jungle"
+  ],
+  "Region": [
+   "Ekobis",
+   "Amalra",
+   "Worngar",
+   "Ylaidya",
+   "Ellaria"
+  ],
+  "Effects": [
+   "Unique"
+  ],
+  "Description": "A rose that grows underwater. It's shaft is extremely durable and shines like a diamond. "
  },
  {
   "name": "Ecthen",
@@ -329,7 +372,7 @@
  },
  {
   "name": "Eowiner",
-  "rarity": "Common",
+  "rarity": "Uncommon",
   "Area": [
    "Arctic"
   ],
@@ -347,26 +390,6 @@
    "Cold"
   ],
   "Description": "A large gray flower. The first sign of winter."
- },
- {
-  "name": "Earendiler",
-  "rarity": "Very Rare",
-  "Area": [
-   "Coast",
-   "Swamp",
-   "Jungle"
-  ],
-  "Region": [
-   "Ekobis",
-   "Amalra",
-   "Worngar",
-   "Ylaidya",
-   "Ellaria"
-  ],
-  "Effects": [
-   "Unique"
-  ],
-  "Description": "A rose that grows underwater. It's shaft is extremely durable and shines like a diamond. "
  },
  {
   "name": "Firgolfir",
@@ -478,7 +501,7 @@
  },
  {
   "name": "Grayleaf",
-  "rarity": "Common",
+  "rarity": "Uncommon",
   "Area": [
    "Plains",
    "Forest"
@@ -536,7 +559,7 @@
    "Arcalus"
   ],
   "Effects": [
-   "Dillute"
+   "Dilute"
   ],
   "Description": "The honeyfungus is a yellow mushroom that grows in clusters. A small natural webbing covers the cap."
  },
@@ -566,6 +589,34 @@
    "Endurance"
   ],
   "Description": "This mushroom's cap is as hard as iron. It grows near trees or rocks and is sometimes used as armor by small creatures."
+ },
+ {
+  "name": "Jackberry",
+  "rarity": "Common",
+  "Area": [
+   "Arctic",
+   "Coast",
+   "Desert",
+   "Plains",
+   "Forest",
+   "Mountain",
+   "Swamp",
+   "Jungle",
+   "Depths"
+  ],
+  "Region": [
+   "Jyrnimm",
+   "Ekobis",
+   "Amalra",
+   "Worngar",
+   "Arcalus",
+   "Ylaidya",
+   "Ellaria"
+  ],
+  "Effects": [
+   "Enhance"
+  ],
+  "Description": "This berry grows everywhere, no matter the conditions. It is a bright red color."
  },
  {
   "name": "Knaveroot",
@@ -635,7 +686,7 @@
    "Ellaria"
   ],
   "Effects": [
-   "Enhance"
+   "Unique(Preservation)"
   ],
   "Description": "Longhay can grow up to 70cm and resembles standard wheat. It has however, no ear(tip)."
  },
@@ -690,6 +741,34 @@
    "Arcana"
   ],
   "Description": "This light blue flower grows only during the night and quickly withers when exposed to sunlight."
+ },
+ {
+  "name": "Morningflower",
+  "rarity": "Common",
+  "Area": [
+   "Arctic",
+   "Coast",
+   "Desert",
+   "Plains",
+   "Forest",
+   "Mountain",
+   "Swamp",
+   "Jungle",
+   "Depths"
+  ],
+  "Region": [
+   "Jyrnimm",
+   "Ekobis",
+   "Amalra",
+   "Worngar",
+   "Arcalus",
+   "Ylaidya",
+   "Ellaria"
+  ],
+  "Effects": [
+   "Medication"
+  ],
+  "Description": "A flower that blooms in the morning and closes at night. It is a bright yellow color."
  },
  {
   "name": "Mrtas",
@@ -806,7 +885,7 @@
  },
  {
   "name": "Roadrose",
-  "rarity": "Common",
+  "rarity": "Uncommon",
   "Area": [
    "Coast",
    "Plains",
@@ -828,6 +907,28 @@
    "Speed"
   ],
   "Description": "Found near roads. This rose's petals have a brown tint to it."
+ },
+ {
+  "name": "Sandroot",
+  "rarity": "Common",
+  "Area": [
+   "Coast",
+   "Desert",
+   "Plains",
+   "Mountain",
+   "Jungle",
+   "Cave"
+  ],
+  "Region": [
+   "Amalra",
+   "Worngar",
+   "Ylaidya",
+   "Ellaria"
+  ],
+  "Effects": [
+   "Vitality"
+  ],
+  "Description": "Found among sand dunes, this root is a light brown color."
  },
  {
   "name": "Serpent-tail",
@@ -1069,7 +1170,7 @@
  },
  {
   "name": "Waterlily",
-  "rarity": "Common",
+  "rarity": "Uncommon",
   "Area": [
    "Coast",
    "Desert",
@@ -1086,7 +1187,7 @@
    "Ellaria"
   ],
   "Effects": [
-   "Dillute"
+   "Dilute"
   ],
   "Description": "This flower grows in small ponds or lakes. It's petals are white and it's stem is green."
  }

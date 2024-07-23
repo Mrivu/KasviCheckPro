@@ -1,7 +1,7 @@
 [
     {
         "name": "Grayleaf",
-        "rarity": "Common",
+        "rarity": "Uncommon",
         "Area": ["Plains", "Forest"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
         "Effects": ["Enhance", "Medication"],
@@ -22,14 +22,6 @@
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
         "Effects": ["Enhance"],
         "Description": "A moss that grow in puddles of water. It has a brown tint."
-    },
-    {
-        "name": "Longhay",
-        "rarity": "Common",
-        "Area": ["Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle"],
-        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
-        "Effects": ["Enhance"],
-        "Description": "Longhay can grow up to 70cm and resembles standard wheat. It has however, no ear(tip)."
     },
     {
         "name": "Knaveroot",
@@ -65,10 +57,10 @@
     },
     {
         "name": "Waterlily",
-        "rarity": "Common",
+        "rarity": "Uncommon",
         "Area": ["Coast","Desert","Plains","Forest","Swamp","Jungle","Cave"],
         "Region": ["Ekobis", "Worngar", "Ylaidya", "Ellaria"],
-        "Effects": ["Dillute"],
+        "Effects": ["Dilute"],
         "Description": "This flower grows in small ponds or lakes. It's petals are white and it's stem is green."
     },
     {
@@ -76,7 +68,7 @@
         "rarity": "Uncommon",
         "Area": ["Plains","Forest","Swamp","Jungle","Cave"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus"],
-        "Effects": ["Dillute"],
+        "Effects": ["Dilute"],
         "Description": "The honeyfungus is a yellow mushroom that grows in clusters. A small natural webbing covers the cap."
     },
     {
@@ -84,7 +76,7 @@
         "rarity": "Rare",
         "Area": ["Plains","Forest","Mountain","Swamp","Cave","Depths"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
-        "Effects": ["Dillute"],
+        "Effects": ["Dilute"],
         "Description": "The Achar is a small fern that turns into ash at the end of it's lifecycle. The fern itself has a red tint to it."
     },
     {
@@ -92,7 +84,7 @@
         "rarity": "Very Rare",
         "Area": ["Plains","Mountain","Jungle","Cave","Depths"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
-        "Effects": ["Dillute"],
+        "Effects": ["Dilute"],
         "Description": "Coppergrass grows on rusted metals, mainly oxidized copper. The grass itself is short and dark green."
     },
     {
@@ -100,7 +92,7 @@
         "rarity": "Legendary",
         "Area": ["Arctic","Forest","Mountain","Cave","Depths"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Arcalus"],
-        "Effects": ["Dillute"],
+        "Effects": ["Dilute"],
         "Description": "The Aylia bloom is a large, white flower that grows in the dark. It's petals are luminescent and it's stem is black as night. These flowers are rumoured to onyl grow during eclipses."
     },
     {
@@ -216,14 +208,6 @@
         "Description": "This root is a dark purple color and has a strange, sweet smell."
     },
     {
-        "name": "Deepmoss",
-        "rarity": "Common",
-        "Area": ["Depths"],
-        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
-        "Effects": ["Medication"],
-        "Description": "Moss that grows near crevices and cracks. It's a dark green color."
-    },
-    {
         "name": "Shadowstalk",
         "rarity": "Very Rare",
         "Area": ["Cave", "Depths"],
@@ -249,7 +233,7 @@
     },
     {
         "name": "Roadrose",
-        "rarity": "Common",
+        "rarity": "Uncommon",
         "Area": ["Coast","Plains","Forest","Mountain"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
         "Effects": ["Poison","Poison","Speed"],

@@ -1,7 +1,7 @@
 [
     {
         "name": "Borithen",
-        "rarity": "Common",
+        "rarity": "Uncommon",
         "Area": ["Arctic","Coast","Desert","Plains","Mountain","Forest"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ellaria"],
         "Effects": ["Enhance"],
@@ -25,7 +25,7 @@
     },
     {
         "name": "Eowiner",
-        "rarity": "Common",
+        "rarity": "Uncommon",
         "Area": ["Arctic"],
         "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
         "Effects": ["Resistance","Cold"],

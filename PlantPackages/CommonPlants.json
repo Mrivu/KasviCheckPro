@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Longhay",
+        "rarity": "Common",
+        "Area": ["Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Unique(Preservation)"],
+        "Description": "Longhay can grow up to 70cm and resembles standard wheat. It has however, no ear(tip)."
+    },
+    {
+        "name": "Deepmoss",
+        "rarity": "Common",
+        "Area": ["Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication"],
+        "Description": "Moss that grows near crevices and cracks. It's a dark green color."
+    },
+    {
+        "name": "Jackberry",
+        "rarity": "Common",
+        "Area": ["Arctic","Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Enhance"],
+        "Description": "This berry grows everywhere, no matter the conditions. It is a bright red color."
+    },
+    {
+        "name": "Sandroot",
+        "rarity": "Common",
+        "Area": ["Coast","Desert","Plains","Mountain","Jungle","Cave"],
+        "Region": ["Amalra", "Worngar", "Ylaidya", "Ellaria"],
+        "Effects": ["Vitality"],
+        "Description": "Found among sand dunes, this root is a light brown color."
+    },
+    {
+        "name": "Cavefern",
+        "rarity": "Common",
+        "Area": ["Mountain","Cave","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Unique(Preservation)"],
+        "Description": "A small green fern that grows in dark crevices."
+    },
+    {
+        "name": "Morningflower",
+        "rarity": "Common",
+        "Area": ["Arctic","Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle","Depths"],
+        "Region": ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"],
+        "Effects": ["Medication"],
+        "Description": "A flower that blooms in the morning and closes at night. It is a bright yellow color."
+    }
+]
