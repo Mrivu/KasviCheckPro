@@ -180,6 +180,9 @@ def PrintImportPlants():
 ## Variables
 mainProfile = None
 
+if not os.path.exists("ImportFolder"):
+    os.makedirs("ImportFolder")
+
 ClearTerminal()
 print(" WELCOME TO KASVICHEKER PRO - VERSION: " + GetVersion())
 print(" - Created by Iivari van Uden - ")

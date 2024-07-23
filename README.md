@@ -14,11 +14,24 @@ Avaa haluttu terminaali (gitbash, powershell, cmd...)
 Open a terminal of your choice (gitbash, powershell, cmd...)
 
 ```
-# Access the downloaded file
+# Access the downloaded folder
 cd KasviCheckerPro
 
 # Run the program
 python3 kasvicheck.py
+```
+
+## Getting the latest changes
+Avaa haluttu terminaali (gitbash, powershell, cmd...)
+
+Open a terminal of your choice (gitbash, powershell, cmd...)
+
+```
+# Access the program folder
+cd KasviCheckerPro
+
+# Pull the latest changes
+git pull
 ```
 
 ## Importing plants
