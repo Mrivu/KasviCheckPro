@@ -7,17 +7,17 @@ import Menus.CheckMenu as CheckMenu
 
 def GetVersion():
     updatesfile = open("updates.txt", "r")
-
     for pos, text in enumerate(updatesfile): 
         if pos in [0]: 
             return text.replace("Version: ", "")
     updatesfile.close() 
 
 mainProfile = None
-def CreateProfile(jsonfile, newprofile = True):
+def CreateProfile(jsonfile, setAsMain = True):
 
     global mainProfile
-    global tempLines
+    
+    ClearCount = 5
 
     print("Creating a new profile...")
 
@@ -27,7 +27,10 @@ def CreateProfile(jsonfile, newprofile = True):
         profile["username"] = input("Enter your username: ")
         if not profile["username"]:
             print("Invalid username, please input a valid username.")
-            tempLines += 2
+            ClearCount += 2
+        elif any(p["username"] == profile["username"] for p in jsonfile):
+            print("Username already exists, please input a different username.")
+            ClearCount += 2
         else:
             break
 
@@ -35,13 +38,13 @@ def CreateProfile(jsonfile, newprofile = True):
         modifiervalue = input("Enter your profile modifier (Survival modifier): ")
         if (len(modifiervalue) < 2 ):
             print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
+            ClearCount += 2
         elif modifiervalue[0] != "+" and modifiervalue[0] != "-":
             print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
+            ClearCount += 2
         elif not modifiervalue[1:].isdigit():
             print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
+            ClearCount += 2
         else:
             profile["modifier"] = modifiervalue
             break
@@ -50,17 +53,17 @@ def CreateProfile(jsonfile, newprofile = True):
         multipliervalue = input("Enter your profile multiplier (Natural explorer ect.): ")
         if not (multipliervalue.isdigit()):
             print("Invalid multiplier, please enter a number. (1,2,3 etc)")
-            tempLines += 2
+            ClearCount += 2
         else:
             profile["multiplier"] = multipliervalue
             break
 
-    profile["inuse"] = newprofile
+    profile["inuse"] = setAsMain
 
-    if newprofile == True:
+    if setAsMain == True:
         mainProfile = profile
 
-    ClearLines(5 + tempLines)
+    ClearLines(ClearCount)
 
     jsonfile.append(profile)
     json.dump(jsonfile, open("profiles.json", "w"), indent=4)
@@ -84,20 +87,19 @@ def PrintMainMenu():
           " -[K]- Import plants" + "\n" +
           " -[K]- Exit" + "\n")
 
-helpClearCount = 7
 def PrintHelp():
+    ClearCount = 7
     print(" --- Help ---" + "\n" +
           " KEYWORDS: Type word marked with [K] to perform actions. Some keywords can be combined." + "\n" +
           " INPUTTING: Type keywords to perform actions. Capitalization can be ignored." + "\n" + 
           " QUICK EXIT: Ctrl + C closes the program at any time." + "\n" +
           " - Input anything to continue - " + "\n")
     input("Enter command: ").lower()
-    ClearLines(helpClearCount)
-    PrintMainMenu()
+    return ClearCount
     
-profileClearCount = 7
 def PrintProfile():
-    global tempLines, mainProfile
+    global mainProfile
+    ClearCount = 8
     ProfileMenu.MenuText()
     while True:
         command = input("Enter command: ").lower()
@@ -108,24 +110,25 @@ def PrintProfile():
             if result:
                 ProfileMenu.MenuText()
             else:
-                tempLines += 2
+                ClearCount += 2
+        elif command == "edit":
+            ProfileMenu.EditProfile(profiles)
         elif command == "switch":
             result, mainProfile = ProfileMenu.SwitchProfile(profiles, mainProfile)
             if result:
                 ProfileMenu.MenuText()
             else:
-                tempLines += 2
+                ClearCount += 2
         elif command == "back":
-            ClearLines(profileClearCount + tempLines)
-            PrintMainMenu()
             break
         else:
-            tempLines += 2
+            ClearCount += 2
             print("Invalid command.")
+    return ClearCount
 
 def PrintImportPlants():
 
-    tempLines = 0 # not global
+    ClearCount = 7 # not global
 
     print(" --- Import Plants ---" + "\n" +
           " - Place plant JSON file under 'ImportFolder'" + "\n")
@@ -149,31 +152,28 @@ def PrintImportPlants():
                             allplants = [p for p in allplants if p["name"] != plant["name"]]
                             allplants.append(plant)
                             print(f"Plant {plant['name']} was overwritten.")
-                            tempLines += 3
+                            ClearCount += 3
                         else:
                             print(f"Plant {plant['name']} was not imported.")
-                            tempLines += 3
+                            ClearCount += 3
                     else:
                         allplants.append(plant)
                         print(f"Plant {plant['name']} was imported.")
-                        tempLines += 1
+                        ClearCount += 1
             allplants = sorted(allplants, key=lambda x: x['name'])
 
             json.dump(allplants, open("allplants.json", "w"), indent=1)
 
             print("\n" + "Plants imported successfully!" + "\n" + " - Input anything to continue - ")
             input("Enter command: ")
-            ClearLines(14 + tempLines)
-            PrintMainMenu()
+            return ClearCount + 7
         else:
-            ClearLines(7 + len(importFolderContents))
-            PrintMainMenu()
+            return ClearCount + len(importFolderContents)
     else:
         print("No files found in 'ImportFolder'. Nothing to import." + "\n" + "\n"
               " - Input anything to continue - ")
         input("Enter command: ")
-        ClearLines(7)
-        PrintMainMenu()
+        return ClearCount
 
 
 # Main
@@ -206,17 +206,20 @@ while True:
     command = input("Enter command: ").lower()
     if command == "help":
         ClearLines(mainmenuClearCount + tempLines)
-        PrintHelp()
+        ClearLines(PrintHelp())
+        PrintMainMenu()
     elif command == "profiles":
         ClearLines(mainmenuClearCount + tempLines)
-        PrintProfile()
+        ClearLines(PrintProfile())
+        PrintMainMenu()
     elif command == "check":
         ClearLines(mainmenuClearCount + tempLines)
         ClearLines(CheckMenu.PrintCheck(mainProfile))
         PrintMainMenu()
     elif command == "import plants":
         ClearLines(mainmenuClearCount + tempLines)
-        PrintImportPlants()
+        ClearLines(PrintImportPlants())
+        PrintMainMenu()
     elif command == "exit":
         print("Exiting...")
         break

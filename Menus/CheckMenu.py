@@ -1,13 +1,15 @@
+import os
 import random
 import math
 import json
-import os
 
 import Menus.resultTable as resultTable
+import Menus.General as General
+
 
 def PrintCheck(mainprofile):
 
-    tempLines = 13
+    ClearCount = 14
 
     config = json.loads(open("config.json", "r").read())
 
@@ -15,63 +17,45 @@ def PrintCheck(mainprofile):
           " - " + str(mainprofile['username']) + "'s modfier: " + str(mainprofile["modifier"]) + "\n" +
           " - " + str(mainprofile['username']) + "'s multiplier: " + str(mainprofile["multiplier"]) + "\n")
     
-    validModifier = False
-    while not validModifier:
-        modifiervalue = input("Additional modifier (leave blank if no additional modifiers): ")
-        if (len(modifiervalue) != 0 and len(modifiervalue) < 2):
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
-        elif (len(modifiervalue) == 0):
-            modifiervalue = 0
-            validModifier = True
-        elif modifiervalue[0] != "+" and modifiervalue[0] != "-":
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
-        elif not modifiervalue[1:].isdigit():
-            print("Invalid modifier, please input a valid modifier. (+/-Modifier)")
-            tempLines += 2
-        else:
-            validModifier = True
-            if (modifiervalue[0] == "+"):
-                modifiervalue = int(modifiervalue[1:])
-            else:
-                modifiervalue = int(modifiervalue[1:]) * -1
+    ## Additional modifiers
+    modifiervalue, returnLines = General.CheckIfModifier("Additional modifier (leave blank if no additional modifiers): ", "Invalid modifier, please input a valid modifier. (+/-Modifier)")
+    ClearCount += returnLines
 
     validAreas = ["Arctic","Coast","Desert","Plains","Forest","Mountain","Swamp","Jungle","Cave","Depths"]
     validRegions = ["Jyrnimm", "Ekobis", "Amalra", "Worngar", "Arcalus", "Ylaidya", "Ellaria"]
 
+    ## Check area and region
     if (config["defaultArea"] not in validAreas):
-        condition = True
-        while condition:
+        while True:
             area = input("Enter the area you are in: ")
-            tempLines += 1
+            ClearCount += 1
             if area not in validAreas:
                 print("Invalid area, please input a valid area.")
                 print("Valid areas: " + ", ".join(validAreas))
-                tempLines += 2
+                ClearCount += 2
             else:
-                condition = False
+                break
     else:
         area = config["defaultArea"]
 
     if (config["defaultRegion"] not in validRegions):     
-        condition = True
-        while condition:
+        while True:
             region = input("Enter the region you are in: ")
-            tempLines += 1
+            ClearCount += 1
             if region not in validRegions:
                 print("Invalid area, please input a valid region.")
                 print("Valid areas: " + ", ".join(validRegions))
-                tempLines += 2
+                ClearCount += 2
             else:
-                condition = False
+                break
     else:
         region = config["defaultRegion"]   
     
-    if (mainprofile["modifier"][0] == "+"):
-        mainprofilemodifier = int(mainprofile["modifier"][1:])
-    else:
-        mainprofilemodifier = int(mainprofile["modifier"][1:]) * -1
+    ## Check availability
+    availability, returnLines = General.CheckIfModifier("Plant availability (leave blank for Standard): ", "Invalid availability, please enter a modifier (+/- value).")
+    ClearCount += returnLines
+
+    mainprofilemodifier = General.ReturnModifierValue(mainprofile["modifier"])
 
     totalModifier = mainprofilemodifier + modifiervalue
     sign = "+" if totalModifier > 0 else ""
@@ -80,8 +64,15 @@ def PrintCheck(mainprofile):
 
     ## Handle dice roll
     if (config["selfRoll"]):
-        result = int(input(" - What did you roll (Base die)? > ")) + totalModifier
-        print(" - You rolled a " + str(result) + "!" + "\n") 
+        while True:
+            value = input(" - What did you roll (Base die)? > ")
+            if value.isdigit():
+                result = int(value) + totalModifier
+                print(" - You rolled a " + str(result) + "!" + "\n") 
+                break
+            else:
+                print("Invalid input, please input a valid number.")
+                ClearCount += 2
     else:
         input(" - Roll the dice > ENTER < ")     
         result = random.randint(1, 20) + totalModifier
@@ -103,18 +94,17 @@ def PrintCheck(mainprofile):
     ## Check nat 20
     if (result -  totalModifier) == 20:
         plantAmount += 1
-    plantAmount = plantAmount * int(mainprofile["multiplier"])
+    plantAmount = (plantAmount + availability) * int(mainprofile["multiplier"])
 
     if (result > 40):
         result = 40
     elif (result < 0 ):
         result = 1
 
-    if (rollResults[result]["Common"] > 0):
+    if (rollResults[result]["Common"] > 0 and plantAmount > 0):
         rarityResults = random.choices(["Common","Uncommon","Rare","Very Rare","Legendary"],weights=(rollResults[result]["Common"], rollResults[result]["Uncommon"], rollResults[result]["Rare"], rollResults[result]["Very rare"], rollResults[result]["Legendary"]), k=plantAmount)  
         
         allplants = json.loads(open("allplants.json", "r").read())
-        
         checkResults = []
 
         for r in rarityResults:
@@ -122,17 +112,17 @@ def PrintCheck(mainprofile):
             plantPull = random.choice(matchedPlants)
             checkResults.append(plantPull)
             print(" - " + plantPull["name"] + " plant discovered!")
-            tempLines += 1
-        ExportResults(checkResults, config, result, area, region)
+            ClearCount += 1
+        ExportResults(checkResults, config, result, area, region, availability)
         input("\n" + " - Enter anything to continue:  ")
-        return tempLines     
+        return ClearCount     
     else:
-        tempLines += 1
+        ClearCount += 1
         print(" - You didn't find any plants." + "\n")
         input( " - Enter anything to continue:  ")
-        return tempLines
+        return ClearCount
 
-def ExportResults(checkResults, config, roll, area, region):
+def ExportResults(checkResults, config, roll, area, region, availability):
     if (config["downloadCheckResults"]):
 
         folder_path = os.path.join(os.getcwd(), "CheckResults")
@@ -150,9 +140,15 @@ def ExportResults(checkResults, config, roll, area, region):
         for p in checkResults:
             plantContent.append("Plant name: " + p["name"] + "\n" +
                                 "Plant rarity: " + p["rarity"] + "\n" +
-                                "Plant effects: " + ",".join(p["Effects"]) + "\n")
+                                "Plant effects: " + ",".join(p["Effects"]) + "\n"+
+                                "Description: " + p["Description"] + "\n")
+            
+        if availability > 0:
+            availability = "+" + str(availability)
+        else:
+            availability = str(availability)
 
-        infoContent = "Roll: " + str(roll) + ", Area: " + area + ", Region: " + region
+        infoContent = "Roll: " + str(roll) + ", Area: " + area + ", Availability: " +  availability + ", Region: " + region
 
         content = " "*(math.ceil((len(infoContent)-23)/2)) + "-- Plants Discovered --" + "\n" + infoContent + "\n" + "\n" + "\n".join(plantContent)
 
