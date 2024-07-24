@@ -1,5 +1,10 @@
-Version: 1.0.0
+Version: 1.1.0
 
 ### CHANGES ###
 # Version 1.0.0
-Released kasvicheckerpro
+- Released kasvicheckerpro
+
+# Verison 1.1.0
+- Added Profile Edit, you can now edit profiles
+- Added Plant availability modifier
+- Cleaner and simplified code
