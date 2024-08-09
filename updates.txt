@@ -1,4 +1,4 @@
-Version: 1.1.0
+Version: 1.1.1
 
 ### CHANGES ###
 # Version 1.0.0
@@ -8,3 +8,6 @@ Version: 1.1.0
 - Added Profile Edit, you can now edit profiles
 - Added Plant availability modifier
 - Cleaner and simplified code
+
+# Verison 1.1.1
+- Added EvervastPlants2, a new collection of plants (not automatically imported)
